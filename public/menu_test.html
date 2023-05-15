@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<script language="javascript">
+	var xhr = new XMLHttpRequest();
+xhr.open("GET", "Library/sintron_menu.lbi");
+xhr.onload = function() {
+  if (xhr.status == 200) {
+    document.getElementById("menuhtml").innerHTML = xhr.responseText;
+  } else {
+    alert("Error loading file: " + xhr.status);
+  }
+};
+xhr.send();
+	</script>
+	<div id="menuhtml"></div>
+</body>
+</html>
